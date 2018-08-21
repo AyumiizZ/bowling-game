@@ -1,6 +1,6 @@
 public class game{
 
-    private int[][] frame; // 0-1 = roll score, 2 = sum score
+    private int[][] frame;
     private int[] mode;
     private int[] frameScore;
     private int currentFrame;
