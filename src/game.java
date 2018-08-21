@@ -57,7 +57,7 @@ public class game{
     public void throwBall(int score){
         addExtraScore(score);
         if(isLastFrame()){
-            LastFrameThrow(score);
+            lastFrameThrow(score);
         }
         else{
             otherFrameThrow(score);
@@ -72,46 +72,31 @@ public class game{
         return (currentFrame+1);
     }
 
-    private void LastFrameThrow(int score){
-        if(roll < 2 && roll >= 0){
+    private void lastFrameThrow(int score){
+        if(roll < 2 ||(roll == 2 && frameScore[currentFrame] >= 10)){
             frame[currentFrame][roll] = score;
             frameScore[currentFrame] += score;
-            mode[currentFrame] = 0;
-            roll += 1;
-        }
-        else if(roll == 2 && frameScore[currentFrame] >= 10){
-            frame[currentFrame][roll] = score;
-            frameScore[currentFrame] += score;
-            mode[currentFrame] = 0;
-            roll++;
-        }
-        else if(roll == 2 && frameScore[currentFrame] < 10){
-            mode[currentFrame] = 0;
+            nextRoll();
         }
         else{
-            System.out.println("ERROR");
+            System.out.println("GAME IS ALREADY END!!!");
         }
     }
 
     private void otherFrameThrow(int score){
         frame[currentFrame][roll] = score;
         frameScore[currentFrame] += score;
-        if(isStrike(score)){
-            mode[currentFrame] = 2;
-            nextFrame();
-        }
-        else if(isSpare(score)){
-            mode[currentFrame] = 1;
-            nextFrame();
+        if(roll == 0 && score != 10){
+            nextRoll();
         }
         else {
-            mode[currentFrame] = 0;
-            if(roll == 1){
-                nextFrame();
+            if(isStrike(score)){
+                setMode('X');
             }
-            else{
-                nextRoll();
+            else if(isSpare(score)){
+                setMode('/');
             }
+            nextFrame();
         }
     }
 
@@ -123,13 +108,13 @@ public class game{
     private void nextRoll(){
         roll++;
     }
-    
+
     private boolean isStrike(int score){
         return (score == 10 && this.roll == 0);
     }
 
     private boolean isSpare(int score){
-        return (score == 10 && this.roll == 0);
+        return (score == 10 && this.roll == 1);
     }
 
     public int getScore(){
@@ -154,27 +139,25 @@ public class game{
     }
 
     private void addExtraScore(int score){
-        backOne(score);
-        backTwo(score);
+        addExtraFrameScore(currentFrame-1,score);
+        addExtraFrameScore(currentFrame-2,score);
     }
 
-    private void backTwo(int score){
-        int temporary = currentFrame-2;
-        if(temporary >= 0){
-            if(mode[temporary] == 1){
-                frameScore[temporary] += score;
-                mode[temporary]--;
+    private void addExtraFrameScore(int frame,int score){
+        if(frame >= 0){
+            if(mode[frame] > 0){
+                frameScore[frame] += score;
+                mode[frame]--;
             }
         }
     }
 
-    private void backOne(int score){
-        int temporary = currentFrame-1;
-        if(temporary >= 0){
-            if(mode[temporary] > 0){
-                frameScore[temporary] += score;
-                mode[temporary]--;
-            }
+    private void setMode(char mode){
+        if(mode == 'X'){
+            this.mode[currentFrame] = 2;
+        }
+        else if(mode == '/'){
+            this.mode[currentFrame] = 1;
         }
     }
 }
