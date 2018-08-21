@@ -11,11 +11,11 @@ public class game{
     }
 
     private void initGame(){
-        frame = new int[10][3];
-        mode = new int[10];
-        frameScore = new int[10];
-        currentFrame = 0;
-        roll = 0;
+        this.frame = new int[10][3];
+        this.mode = new int[10];
+        this.frameScore = new int[10];
+        this.currentFrame = 0;
+        this.roll = 0;
     }
 
     public void debug(){
@@ -28,7 +28,7 @@ public class game{
                 temporary = 3;
             }
             for(int j = 0; j < temporary;j++){
-                System.out.print(frame[i][j]);
+                System.out.print(this.frame[i][j]);
                 if(j != temporary-1){
                     System.out.print(",");
                 }
@@ -38,19 +38,19 @@ public class game{
         System.out.println("\nframeScore");
         for(int i = 0; i < 10;i++){
             System.out.print("[");
-            System.out.print(frameScore[i]);
+            System.out.print(this.frameScore[i]);
             System.out.print("] ");
         }
         System.out.println("\nMode");
         for(int i = 0; i < 10;i++){
             System.out.print("[");
-            System.out.print(mode[i]);
+            System.out.print(this.mode[i]);
             System.out.print("] ");
         }
         System.out.print("\ncurrentFrame: ");
-        System.out.println(currentFrame);
+        System.out.println(this.currentFrame);
         System.out.print("roll: ");
-        System.out.println(roll);
+        System.out.println(this.roll);
         System.out.println("========== END LOG ==========");
     }
 
@@ -65,17 +65,16 @@ public class game{
     }
 
     private boolean isLastFrame(){
-        return (currentFrame == 9);
+        return (this.currentFrame == 9);
     }
 
     public int getCurrentFrame() {
-        return (currentFrame+1);
+        return (this.currentFrame+1);
     }
 
     private void lastFrameThrow(int score){
-        if(roll < 2 ||(roll == 2 && frameScore[currentFrame] >= 10)){
-            frame[currentFrame][roll] = score;
-            frameScore[currentFrame] += score;
+        if(this.roll < 2 ||(this.roll == 2 && this.frameScore[currentFrame] >= 10)){
+            saveScore(score);
             nextRoll();
         }
         else{
@@ -84,9 +83,8 @@ public class game{
     }
 
     private void otherFrameThrow(int score){
-        frame[currentFrame][roll] = score;
-        frameScore[currentFrame] += score;
-        if(roll == 0 && score != 10){
+        saveScore(score);
+        if(this.roll == 0 && score != 10){
             nextRoll();
         }
         else {
@@ -100,13 +98,18 @@ public class game{
         }
     }
 
+    private void saveScore(int score){
+        this.frame[currentFrame][roll] = score;
+        this.frameScore[currentFrame] += score;
+    }
+
     private void nextFrame(){
-        currentFrame++;
-        roll = 0;
+        this.currentFrame++;
+        this.roll = 0;
     }
 
     private void nextRoll(){
-        roll++;
+        this.roll++;
     }
 
     private boolean isStrike(int score){
@@ -119,35 +122,35 @@ public class game{
 
     public int getScore(){
         int score = 0;
-        for(int i = 0;i <= currentFrame;i++){
-            if(mode[i] == 0){
-                score += frameScore[i];
+        for(int i = 0;i <= this.currentFrame;i++){
+            if(this.mode[i] == 0){
+                score += this.frameScore[i];
             }
         }
         return score;
     }
 
-    public int scoreForFrame(int nFrame){
-        nFrame--;
-        int score = 0;
-        for(int i = 0;i <= nFrame;i++){
-            if(mode[i] == 0){
-                score += frameScore[i];
+    public int scoreForFrame(int frame){
+        frame--;
+        int sumScore = 0;
+        for(int i = 0;i <= frame;i++){
+            if(this.mode[i] == 0){
+                sumScore += this.frameScore[i];
             }
         }
-        return score;
+        return sumScore;
     }
 
     private void addExtraScore(int score){
-        addExtraFrameScore(currentFrame-1,score);
-        addExtraFrameScore(currentFrame-2,score);
+        addExtraFrameScore(this.currentFrame-1,score);
+        addExtraFrameScore(this.currentFrame-2,score);
     }
 
     private void addExtraFrameScore(int frame,int score){
         if(frame >= 0){
-            if(mode[frame] > 0){
-                frameScore[frame] += score;
-                mode[frame]--;
+            if(this.mode[frame] > 0){
+                this.frameScore[frame] += score;
+                this.mode[frame]--;
             }
         }
     }

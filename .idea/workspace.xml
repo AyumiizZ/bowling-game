@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fd92410-5064-4b53-a6fd-3e18395d1ef9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bowling/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bowling/game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Bowling/gameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Bowling/gameTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,12 +34,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5928" />
+          <entry key="java" value="6180" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5928" />
+          <entry key="JAVA" value="6180" />
         </counts>
       </usages-collector>
     </session>
@@ -52,17 +49,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="141" column="47" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
+            <state relative-caret-position="51">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding>
                 <element signature="e#209#342#0" />
                 <element signature="e#349#877#0" />
                 <element signature="e#883#1166#0" />
                 <element signature="method#lastFrameThrow#0;class#game#0" />
                 <element signature="method#otherFrameThrow#0;class#game#0" />
+                <element signature="method#saveScore#0;class#game#0" />
                 <element signature="method#nextFrame#0;class#game#0" />
                 <element signature="e#2629#2840#0" />
                 <element signature="e#2846#3084#0" />
+                <element signature="method#addExtraScore#0;class#game#0" />
+                <element signature="method#addExtraFrameScore#0;class#game#0" />
                 <element signature="method#setMode#0;class#game#0" />
               </folding>
             </state>
@@ -141,7 +141,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534825945218" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534826642949" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../primeGenerator" />
@@ -199,14 +199,11 @@
       <workItem from="1534738098475" duration="2676000" />
       <workItem from="1534744894033" duration="10760000" />
       <workItem from="1534765311482" duration="1088000" />
-      <workItem from="1534818075719" duration="5734000" />
+      <workItem from="1534818075719" duration="6436000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Bowling - 2018.08.21 at 11h 03m 45s.xml">
-      <configuration name="All in Bowling" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_Bowling - 2018.08.21 at 11h 05m 30s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
@@ -234,9 +231,12 @@
     <history-entry file="All_in_Bowling - 2018.08.21 at 11h 27m 34s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_Bowling - 2018.08.21 at 11h 32m 26s.xml">
+      <configuration name="All in Bowling" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20258000" />
+    <option name="totallyTimeSpent" value="20960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -308,6 +308,18 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/game.java</url>
+          <line>106</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/gameTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -321,17 +333,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="141" column="47" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
+        <state relative-caret-position="51">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
             <element signature="e#209#342#0" />
             <element signature="e#349#877#0" />
             <element signature="e#883#1166#0" />
             <element signature="method#lastFrameThrow#0;class#game#0" />
             <element signature="method#otherFrameThrow#0;class#game#0" />
+            <element signature="method#saveScore#0;class#game#0" />
             <element signature="method#nextFrame#0;class#game#0" />
             <element signature="e#2629#2840#0" />
             <element signature="e#2846#3084#0" />
+            <element signature="method#addExtraScore#0;class#game#0" />
+            <element signature="method#addExtraFrameScore#0;class#game#0" />
             <element signature="method#setMode#0;class#game#0" />
           </folding>
         </state>
