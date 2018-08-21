@@ -37,6 +37,8 @@ public class gameTest extends game{
         bowling.throwBall(1);
         bowling.throwBall(1);
         assertEquals(270,bowling.getScore());
+
+
     }
 
 //    @Test
