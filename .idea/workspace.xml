@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4fd92410-5064-4b53-a6fd-3e18395d1ef9" name="Default Changelist" comment="" />
+    <list default="true" id="4fd92410-5064-4b53-a6fd-3e18395d1ef9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/gameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/gameTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,12 +35,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4364" />
+          <entry key="java" value="5375" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4364" />
+          <entry key="JAVA" value="5375" />
         </counts>
       </usages-collector>
     </session>
@@ -47,11 +50,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="277">
+              <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
               <folding>
-                <element signature="e#769#770#0" expanded="true" />
-                <element signature="e#806#807#0" expanded="true" />
+                <element signature="e#209#342#0" />
+                <element signature="e#349#877#0" />
+                <element signature="e#883#1166#0" />
+                <element signature="method#otherFrameThrow#0;class#game#0" />
+                <element signature="method#nextFrame#0;class#game#0" />
+                <element signature="e#3964#3965#0" expanded="true" />
+                <element signature="e#4018#4019#0" expanded="true" />
+                <element signature="e#2629#2840#0" />
+                <element signature="e#2846#3084#0" />
+                <element signature="e#3090#3182#0" />
+                <element signature="e#3188#3437#0" />
+                <element signature="e#3443#3691#0" />
               </folding>
             </state>
           </provider>
@@ -60,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/gameTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="187">
+              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,8 +98,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/game.java" />
         <option value="$PROJECT_DIR$/tests/gameTest.java" />
+        <option value="$PROJECT_DIR$/src/game.java" />
       </list>
     </option>
   </component>
@@ -129,7 +142,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534755148642" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534823645596" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../primeGenerator" />
@@ -187,44 +200,44 @@
       <workItem from="1534738098475" duration="2676000" />
       <workItem from="1534744894033" duration="10760000" />
       <workItem from="1534765311482" duration="1088000" />
-      <workItem from="1534818075719" duration="554000" />
+      <workItem from="1534818075719" duration="3449000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 16m 56s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 30m 41s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 17m 38s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 31m 18s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 21m 07s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 34m 21s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 22m 16s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 34m 43s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 22m 41s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 35m 08s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 26m 43s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 36m 16s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 29m 24s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 37m 05s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 30m 11s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 42m 05s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 37m 47s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 44m 58s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Bowling - 2018.08.20 at 15h 38m 49s.xml">
+    <history-entry file="All_in_Bowling - 2018.08.21 at 10h 53m 40s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15078000" />
+    <option name="totallyTimeSpent" value="17973000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -297,23 +310,33 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/game.java">
+    <entry file="file://$PROJECT_DIR$/tests/gameTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="187">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
           <folding>
-            <element signature="e#769#770#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/gameTest.java">
+    <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="277">
+          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#209#342#0" />
+            <element signature="e#349#877#0" />
+            <element signature="e#883#1166#0" />
+            <element signature="method#otherFrameThrow#0;class#game#0" />
+            <element signature="method#nextFrame#0;class#game#0" />
+            <element signature="e#3964#3965#0" expanded="true" />
+            <element signature="e#4018#4019#0" expanded="true" />
+            <element signature="e#2629#2840#0" />
+            <element signature="e#2846#3084#0" />
+            <element signature="e#3090#3182#0" />
+            <element signature="e#3188#3437#0" />
+            <element signature="e#3443#3691#0" />
           </folding>
         </state>
       </provider>

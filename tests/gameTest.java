@@ -27,6 +27,7 @@ public class gameTest extends game{
             bowling.throwBall(10);
         }
         bowling.throwBall(9);
+        bowling.debug();
         assertEquals(299,bowling.getScore());
 
         bowling = new game();
@@ -36,6 +37,7 @@ public class gameTest extends game{
         bowling.throwBall(9);
         bowling.throwBall(1);
         bowling.throwBall(1);
+        bowling.debug();
         assertEquals(270,bowling.getScore());
 
 
