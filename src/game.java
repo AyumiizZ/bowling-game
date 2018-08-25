@@ -106,9 +106,9 @@ public class game {
         if (this.roll == 0 && score != 10) {
             nextRoll();
         } else {
-            if (isStrike(score)) {
+            if (isStrike(frameScore[currentFrame])) {
                 setMode('X');
-            } else if (isSpare(score)) {
+            } else if (isSpare(frameScore[currentFrame])) {
                 setMode('/');
             }
             nextFrame();
