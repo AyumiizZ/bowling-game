@@ -1,191 +1,161 @@
-public class game{
+public class game {
 
-    private int[][] frame; // 0-1 = roll score, 2 = sum score
+    private int[][] frame;
     private int[] mode;
+    private int[] frameScore;
     private int currentFrame;
     private int roll;
 
-    public game(){
-        resetGame();
+    public game() {
+        initGame();
     }
 
-    public void resetGame(){
-        frame = new int[10][3];
-        mode = new int[10];
-        currentFrame = 0;
-        roll = 0;
+    public void debug() {
+        System.out.println("========= DEBUG LOG =========");
+        System.out.println("Frame");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("[");
+            int temporary = 2;
+            if (i == 9) {
+                temporary = 3;
+            }
+            for (int j = 0; j < temporary; j++) {
+                System.out.print(this.frame[i][j]);
+                if (j != temporary - 1) {
+                    System.out.print(",");
+                }
+            }
+            System.out.print("] ");
+        }
+        System.out.println("\nframeScore");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("[");
+            System.out.print(this.frameScore[i]);
+            System.out.print("] ");
+        }
+        System.out.println("\nMode");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("[");
+            System.out.print(this.mode[i]);
+            System.out.print("] ");
+        }
+        System.out.print("\ncurrentFrame: ");
+        System.out.println(this.currentFrame);
+        System.out.print("roll: ");
+        System.out.println(this.roll);
+        System.out.println("========== END LOG ==========");
     }
 
-    public void debug(){
-        System.out.println(frame);
-        System.out.println(mode);
-    }
-
-    public void throwBall(int score){
+    public void throwBall(int score) {
         addExtraScore(score);
-//        System.out.println(currentFrame);
-        if(currentFrame == 9){
-            throwBall10(score);
+        if (isLastFrame()) {
+            lastFrameThrow(score);
+        } else {
+            otherFrameThrow(score);
         }
-        else if(currentFrame < 9 && currentFrame >= 0){
-            throwBall9(score);
+    }
+
+    public int getScore() {
+        int score = 0;
+        for (int i = 0; i <= this.currentFrame; i++) {
+            if (this.mode[i] == 0) {
+                score += this.frameScore[i];
+            }
         }
+        return score;
+    }
+
+    public int scoreForFrame(int frame) {
+        frame--;
+        int sumScore = 0;
+        for (int i = 0; i <= frame; i++) {
+            if (this.mode[i] == 0) {
+                sumScore += this.frameScore[i];
+            }
+        }
+        return sumScore;
     }
 
     public int getCurrentFrame() {
-        return currentFrame+1;
+        return (this.currentFrame + 1);
     }
 
-    private void throwBall10(int score){
-        if(roll < 2 && roll >= 0){
-            frame[currentFrame][roll] = score;
-            frame[currentFrame][2] += score;
-            mode[currentFrame] = 0;
-            roll += 1;
-        }
-        else if(roll == 2 && frame[currentFrame][2] >= 10){
-            frame[currentFrame][2] += score;
-            mode[currentFrame] = 0;
-            roll++;
-        }
-        else if(roll == 2 && frame[currentFrame][2] < 10){
-            mode[currentFrame] = 0;
-        }
-        else{
-            System.out.println("ERROR");
+    private void initGame() {
+        this.frame = new int[10][3];
+        this.mode = new int[10];
+        this.frameScore = new int[10];
+        this.currentFrame = 0;
+        this.roll = 0;
+    }
+
+    private boolean isLastFrame() {
+        return (this.currentFrame == 9);
+    }
+
+    private void lastFrameThrow(int score) {
+        if (this.roll < 2 || (this.roll == 2 && this.frameScore[currentFrame] >= 10)) {
+            saveScore(score);
+            nextRoll();
+        } else {
+            System.out.println("GAME IS ALREADY END!!!");
         }
     }
 
-    private void throwBall9(int score){
-        if(score == 10 && roll == 0){ //strike
-            frame[currentFrame][roll] = score;
-            frame[currentFrame][2] = score;
-            mode[currentFrame] = 2;
-            currentFrame ++;
-        }
-        else if(roll == 0){
-            frame[currentFrame][roll] = score;
-            frame[currentFrame][2] = score;
-            mode[currentFrame] = 0;
-            roll++;
-        }
-        else if(roll == 1){
-            frame[currentFrame][roll] = score;
-            frame[currentFrame][2] += score;
-            if(frame[currentFrame][2] == 10){
-                mode[currentFrame] = 1;
+    private void otherFrameThrow(int score) {
+        saveScore(score);
+        if (this.roll == 0 && score != 10) {
+            nextRoll();
+        } else {
+            if (isStrike(frameScore[currentFrame])) {
+                setMode('X');
+            } else if (isSpare(frameScore[currentFrame])) {
+                setMode('/');
             }
-            else {
-                mode[currentFrame] = 0;
-            }
-            roll = 0;
-            currentFrame++;
+            nextFrame();
         }
-
     }
 
-    public int getScore(){
-        int score = 0;
-        for(int i = 0;i <= currentFrame;i++){
-            if(mode[i] == 0){
-                score += frame[i][2];
-            }
-        }
-        return score;
+    private void saveScore(int score) {
+        this.frame[currentFrame][roll] = score;
+        this.frameScore[currentFrame] += score;
     }
 
-    public int scoreForFrame(int nFrame){
-        nFrame--;
-        int score = 0;
-        for(int i = 0;i <= nFrame;i++){
-            if(mode[i] == 0){
-                score += frame[i][2];
-            }
-        }
-        return score;
+    private void nextFrame() {
+        this.currentFrame++;
+        this.roll = 0;
     }
 
-    private void addExtraScore(int score){
-        backOne(score);
-        backTwo(score);
+    private void nextRoll() {
+        this.roll++;
     }
 
-    private void backTwo(int score){
-        int temporary = currentFrame-2;
-        if(temporary >= 0){
-            if(mode[temporary] == 1){
-                frame[temporary][2] += score;
-                mode[temporary]--;
+    private boolean isStrike(int score) {
+        return (score == 10 && this.roll == 0);
+    }
+
+    private boolean isSpare(int score) {
+        return (score == 10 && this.roll == 1);
+    }
+
+    private void addExtraScore(int score) {
+        addExtraFrameScore(this.currentFrame - 1, score);
+        addExtraFrameScore(this.currentFrame - 2, score);
+    }
+
+    private void addExtraFrameScore(int frame, int score) {
+        if (frame >= 0) {
+            if (this.mode[frame] > 0) {
+                this.frameScore[frame] += score;
+                this.mode[frame]--;
             }
         }
     }
 
-    private void backOne(int score){
-        int temporary = currentFrame-1;
-        if(temporary >= 0){
-            if(mode[temporary] > 0){
-                frame[temporary][2] += score;
-                mode[temporary]--;
-            }
+    private void setMode(char mode) {
+        if (mode == 'X') {
+            this.mode[currentFrame] = 2;
+        } else if (mode == '/') {
+            this.mode[currentFrame] = 1;
         }
     }
 }
-//public class game {
-//    private int currentFrame = 0; // index follow by computer
-//    private int currentThrow = 0;
-//    private int currentScore = 0;
-//    private int sumScore = 0;
-//    private static int maxPin = 10;
-//    private int[][] gameScore;
-//    private char[] gameMode;//0 = not throw, / = spare, X = strike, n = normal
-//    private boolean[][] ExtraScore;
-//
-//    public void resetGame(){
-//        currentFrame = 0;
-//        currentThrow = 0;
-//        currentScore = 0;
-//        sumScore = 0;
-//        gameScore = new int[10][2];
-//        gameMode = new char[10];
-//        ExtraScore = new boolean[100][100];
-//    }
-//    public void throwBall(int score){
-//        if(isValidThrow(score)) {
-//            if(isStrike(score)){
-//                gameMode[currentFrame] = 'X';
-//                gameScore[currentFrame][0] = maxPin;
-//                gameScore[currentFrame][1] = -1;
-//                calculateExtraScore();
-//                currentFrame += 1;
-//            }
-//            else if(currentThrow == 0){
-//                gameScore[currentFrame][currentThrow] = score;
-//                currentThrow += 1;
-//            }
-//            else {
-//                if (isSpare(score)) {
-//                    gameMode[currentFrame] = '/';
-//                } else {
-//                    gameMode[currentFrame] = 'n';
-//                }
-//                gameScore[currentFrame][currentThrow] = score;
-//                calculateExtraScore();
-//                currentFrame += 1;
-//                currentThrow = 0;
-//            }
-//        }
-//    }
-//    private void calculateExtraScore(){
-//
-//    }
-//    private boolean isStrike(int score){
-//        return (score == maxPin && currentThrow == 0);
-//    }
-//    private boolean isSpare(int score){
-//        return (currentScore + score == maxPin && currentThrow == 1);
-//    }
-//    private boolean isValidThrow(int score){
-//        return ((score >= 0 && score <= maxPin) && currentFrame <= 9);
-//    }
-//
-//}
