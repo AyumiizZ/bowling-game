@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4fd92410-5064-4b53-a6fd-3e18395d1ef9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +16,12 @@
     <session id="-944731017">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -34,12 +36,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6181" />
+          <entry key="java" value="6192" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6181" />
+          <entry key="JAVA" value="6192" />
         </counts>
       </usages-collector>
     </session>
@@ -49,20 +51,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="434">
+              <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
               <folding>
-                <element signature="e#176#177#0" expanded="true" />
-                <element signature="e#203#204#0" expanded="true" />
-                <element signature="e#209#342#0" />
-                <element signature="e#349#877#0" />
-                <element signature="e#883#1166#0" />
+                <element signature="e#173#174#0" expanded="true" />
+                <element signature="e#199#200#0" expanded="true" />
+                <element signature="method#initGame#0;class#game#0" />
+                <element signature="e#2448#2449#0" expanded="true" />
+                <element signature="e#2495#2496#0" expanded="true" />
                 <element signature="method#lastFrameThrow#0;class#game#0" />
                 <element signature="method#otherFrameThrow#0;class#game#0" />
                 <element signature="method#saveScore#0;class#game#0" />
                 <element signature="method#nextFrame#0;class#game#0" />
-                <element signature="e#2629#2840#0" />
-                <element signature="e#2846#3084#0" />
+                <element signature="e#3388#3389#0" expanded="true" />
+                <element signature="e#3415#3416#0" expanded="true" />
+                <element signature="e#3458#3459#0" expanded="true" />
+                <element signature="e#3512#3513#0" expanded="true" />
+                <element signature="e#3554#3555#0" expanded="true" />
+                <element signature="e#3608#3609#0" expanded="true" />
                 <element signature="method#addExtraScore#0;class#game#0" />
                 <element signature="method#addExtraFrameScore#0;class#game#0" />
                 <element signature="method#setMode#0;class#game#0" />
@@ -74,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/gameTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
+            <state relative-caret-position="703">
               <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,7 +149,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534827135496" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534827912414" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../primeGenerator" />
@@ -201,14 +207,12 @@
       <workItem from="1534738098475" duration="2676000" />
       <workItem from="1534744894033" duration="10760000" />
       <workItem from="1534765311482" duration="1088000" />
-      <workItem from="1534818075719" duration="6903000" />
+      <workItem from="1534818075719" duration="7694000" />
+      <workItem from="1535196692280" duration="108000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Bowling - 2018.08.21 at 11h 11m 06s.xml">
-      <configuration name="All in Bowling" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_Bowling - 2018.08.21 at 11h 19m 30s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
@@ -236,9 +240,12 @@
     <history-entry file="All_in_Bowling - 2018.08.21 at 11h 51m 21s.xml">
       <configuration name="All in Bowling" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_Bowling - 2018.08.21 at 11h 52m 15s.xml">
+      <configuration name="All in Bowling" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21427000" />
+    <option name="totallyTimeSpent" value="22326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -253,7 +260,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -315,7 +322,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/game.java</url>
-          <line>106</line>
+          <line>123</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -323,35 +330,39 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/gameTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="434">
+          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
           <folding>
-            <element signature="e#176#177#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#209#342#0" />
-            <element signature="e#349#877#0" />
-            <element signature="e#883#1166#0" />
+            <element signature="e#173#174#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="method#initGame#0;class#game#0" />
+            <element signature="e#2448#2449#0" expanded="true" />
+            <element signature="e#2495#2496#0" expanded="true" />
             <element signature="method#lastFrameThrow#0;class#game#0" />
             <element signature="method#otherFrameThrow#0;class#game#0" />
             <element signature="method#saveScore#0;class#game#0" />
             <element signature="method#nextFrame#0;class#game#0" />
-            <element signature="e#2629#2840#0" />
-            <element signature="e#2846#3084#0" />
+            <element signature="e#3388#3389#0" expanded="true" />
+            <element signature="e#3415#3416#0" expanded="true" />
+            <element signature="e#3458#3459#0" expanded="true" />
+            <element signature="e#3512#3513#0" expanded="true" />
+            <element signature="e#3554#3555#0" expanded="true" />
+            <element signature="e#3608#3609#0" expanded="true" />
             <element signature="method#addExtraScore#0;class#game#0" />
             <element signature="method#addExtraFrameScore#0;class#game#0" />
             <element signature="method#setMode#0;class#game#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/gameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
